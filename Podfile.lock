@@ -259,6 +259,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -266,6 +267,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseFirestoreSwift
   - Kingfisher
+  - SnapKit
 
 SPEC REPOS:
   trunk:
@@ -290,6 +292,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SnapKit
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -313,7 +316,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 879fe0fbe03a994596855d513c0c5659da798a1d
+PODFILE CHECKSUM: e752181b5a1259549343b47a206615557bda55b8
 
 COCOAPODS: 1.9.0

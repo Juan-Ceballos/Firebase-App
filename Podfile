@@ -12,6 +12,7 @@ target 'Firebase-App' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'SnapKit'
 
   target 'Firebase-AppTests' do
     inherit! :search_paths

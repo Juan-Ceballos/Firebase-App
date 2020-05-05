@@ -21,7 +21,7 @@ class AuthenticationSession {
         }
     }
     
-    public func signinExistingUser(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> ()) {
+    public func loginExistingUser(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> ()) {
       Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
         if let error = error {
           completion(.failure(error))

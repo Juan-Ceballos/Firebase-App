@@ -13,7 +13,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // feed, profile mb upload
+        viewControllers = [FeedViewController(), ProfileViewController()]
     }
 
 }
