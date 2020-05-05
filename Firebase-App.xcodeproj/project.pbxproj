@@ -89,11 +89,12 @@
 		3E0A0D8224611EDE00AE32EA /* Firebase-App */ = {
 			isa = PBXGroup;
 			children = (
-				3E0A0D8324611EDE00AE32EA /* AppDelegate.swift */,
-				3E0A0D8524611EDE00AE32EA /* SceneDelegate.swift */,
-				3E0A0DA5246122AB00AE32EA /* LoginViewController.swift */,
-				3E0A0D8C24611EE100AE32EA /* Assets.xcassets */,
-				3E0A0D8E24611EE100AE32EA /* LaunchScreen.storyboard */,
+				3E508CD32461D360004781E7 /* Extensions */,
+				3E508CD22461D345004781E7 /* Views */,
+				3E508CD12461D314004781E7 /* FIrebaseServices */,
+				3E508CD02461D309004781E7 /* Models */,
+				3E508CCF2461D2F2004781E7 /* ViewControllers */,
+				3E508CCE2461D2CE004781E7 /* SupportingFiles */,
 				3E0A0D9124611EE100AE32EA /* Info.plist */,
 				3E0A0DA72461242100AE32EA /* GoogleService-Info.plist */,
 			);
@@ -106,6 +107,53 @@
 				3E0A0D9C24611EE200AE32EA /* Info.plist */,
 			);
 			path = "Firebase-AppTests";
+			sourceTree = "<group>";
+		};
+		3E508CCE2461D2CE004781E7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3E0A0D8324611EDE00AE32EA /* AppDelegate.swift */,
+				3E0A0D8524611EDE00AE32EA /* SceneDelegate.swift */,
+				3E0A0D8C24611EE100AE32EA /* Assets.xcassets */,
+				3E0A0D8E24611EE100AE32EA /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3E508CCF2461D2F2004781E7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E0A0DA5246122AB00AE32EA /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E508CD02461D309004781E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E508CD12461D314004781E7 /* FIrebaseServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FIrebaseServices;
+			sourceTree = "<group>";
+		};
+		3E508CD22461D345004781E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E508CD32461D360004781E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		42E9940FA9E2C20F874B1836 /* Pods */ = {
