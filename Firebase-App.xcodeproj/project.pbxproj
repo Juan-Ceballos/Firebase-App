@@ -12,7 +12,7 @@
 		3E0A0D8D24611EE100AE32EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A0D8C24611EE100AE32EA /* Assets.xcassets */; };
 		3E0A0D9024611EE100AE32EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A0D8E24611EE100AE32EA /* LaunchScreen.storyboard */; };
 		3E0A0DA6246122AB00AE32EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A0DA5246122AB00AE32EA /* LoginViewController.swift */; };
-		3E0A0DA82461242100AE32EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A0DA72461242100AE32EA /* GoogleService-Info.plist */; };
+		3E508CD72461D6BF004781E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E508CD62461D6BF004781E7 /* GoogleService-Info.plist */; };
 		40B923830A0B19BD819028B9 /* Pods_Firebase_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45552B7287D99BA5148F2DF /* Pods_Firebase_App.framework */; };
 		D66523D896BF0E9C9BF7C10A /* Pods_Firebase_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EB0F9178D1C13063F0B3A9 /* Pods_Firebase_AppTests.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 		3E0A0D9624611EE200AE32EA /* Firebase-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Firebase-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0A0D9C24611EE200AE32EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E0A0DA5246122AB00AE32EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3E0A0DA72461242100AE32EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E508CD62461D6BF004781E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53EB0F9178D1C13063F0B3A9 /* Pods_Firebase_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF0F16E818056960C362F96 /* Pods-Firebase-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-App.release.xcconfig"; path = "Target Support Files/Pods-Firebase-App/Pods-Firebase-App.release.xcconfig"; sourceTree = "<group>"; };
 		A7B7BB37F59AF5440FCE7BB1 /* Pods-Firebase-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-App.debug.xcconfig"; path = "Target Support Files/Pods-Firebase-App/Pods-Firebase-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 				3E508CCF2461D2F2004781E7 /* ViewControllers */,
 				3E508CCE2461D2CE004781E7 /* SupportingFiles */,
 				3E0A0D9124611EE100AE32EA /* Info.plist */,
-				3E0A0DA72461242100AE32EA /* GoogleService-Info.plist */,
+				3E508CD62461D6BF004781E7 /* GoogleService-Info.plist */,
 			);
 			path = "Firebase-App";
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			files = (
 				3E0A0D9024611EE100AE32EA /* LaunchScreen.storyboard in Resources */,
 				3E0A0D8D24611EE100AE32EA /* Assets.xcassets in Resources */,
-				3E0A0DA82461242100AE32EA /* GoogleService-Info.plist in Resources */,
+				3E508CD72461D6BF004781E7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
