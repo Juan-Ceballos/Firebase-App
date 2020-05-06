@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class FeedViewController: UIViewController {
+    
+    private let authSession = AuthenticationSession()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemOrange
+//        authSession.signOutCurrentUser()
+//        UIViewController.showVC(viewcontroller: LoginViewController())
     }
 
 }

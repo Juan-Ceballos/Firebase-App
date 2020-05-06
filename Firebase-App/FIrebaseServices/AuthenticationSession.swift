@@ -30,5 +30,14 @@ class AuthenticationSession {
         }
       }
     }
+    
+    public func signOutCurrentUser()    {
+        do  {
+            try Auth.auth().signOut()
+        }
+        catch   {
+            print(error.localizedDescription)
+        }
+    }
 }
 

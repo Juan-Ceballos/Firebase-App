@@ -25,7 +25,7 @@
 		3E508CEB24622257004781E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CEA24622257004781E7 /* TabBarViewController.swift */; };
 		3E508CED246222F1004781E7 /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CEC246222F1004781E7 /* FeedPostCell.swift */; };
 		3E508CEF2462231B004781E7 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CEE2462231B004781E7 /* FeedView.swift */; };
-		3E508CF124622329004781E7 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CF024622329004781E7 /* ProfileCell.swift */; };
+		3E508CF124622329004781E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CF024622329004781E7 /* ProfileView.swift */; };
 		3E508CF324622338004781E7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CF224622338004781E7 /* LoginView.swift */; };
 		3E508CF524622352004781E7 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CF424622352004781E7 /* PostView.swift */; };
 		3E508CF724622364004781E7 /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E508CF624622364004781E7 /* DetailPostView.swift */; };
@@ -71,7 +71,7 @@
 		3E508CEA24622257004781E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3E508CEC246222F1004781E7 /* FeedPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
 		3E508CEE2462231B004781E7 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		3E508CF024622329004781E7 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		3E508CF024622329004781E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3E508CF224622338004781E7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3E508CF424622352004781E7 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		3E508CF624622364004781E7 /* DetailPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostView.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			children = (
 				3E508CEC246222F1004781E7 /* FeedPostCell.swift */,
 				3E508CEE2462231B004781E7 /* FeedView.swift */,
-				3E508CF024622329004781E7 /* ProfileCell.swift */,
+				3E508CF024622329004781E7 /* ProfileView.swift */,
 				3E508CF224622338004781E7 /* LoginView.swift */,
 				3E508CF424622352004781E7 /* PostView.swift */,
 				3E508CF624622364004781E7 /* DetailPostView.swift */,
@@ -416,7 +416,7 @@
 				3E508CE724621F64004781E7 /* PostViewController.swift in Sources */,
 				3E0A0D8424611EDE00AE32EA /* AppDelegate.swift in Sources */,
 				3E508CF524622352004781E7 /* PostView.swift in Sources */,
-				3E508CF124622329004781E7 /* ProfileCell.swift in Sources */,
+				3E508CF124622329004781E7 /* ProfileView.swift in Sources */,
 				3E508CF724622364004781E7 /* DetailPostView.swift in Sources */,
 				3E0A0D8624611EDE00AE32EA /* SceneDelegate.swift in Sources */,
 				3E508CE524621F3B004781E7 /* ProfileViewController.swift in Sources */,
