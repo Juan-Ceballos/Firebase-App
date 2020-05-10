@@ -13,4 +13,5 @@ struct Post {
     let imageURL: String
     let postDate: Timestamp
     let postedBy: String
+    let postId = UUID().uuidString
 }

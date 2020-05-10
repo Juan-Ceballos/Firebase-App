@@ -24,7 +24,7 @@ class StorageService {
     if let userId = userId {
       photoReference = storageRef.child("UserProfilePhotos/\(userId).jpg")
     } else if let itemId = postId {
-      photoReference = storageRef.child("ItemsPhotos/\(itemId).jpg")
+        photoReference = storageRef.child("ItemsPhotos/\(itemId).jpg")
     }
     
     

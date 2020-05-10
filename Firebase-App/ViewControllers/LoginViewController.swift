@@ -89,6 +89,7 @@ class LoginViewController: UIViewController {
             }
           case .success:
             print("new user added to database")
+            
             // any extra b4 signing in or creating before adding to database and going to tab bar
           }
         }

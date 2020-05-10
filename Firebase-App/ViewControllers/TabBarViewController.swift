@@ -10,10 +10,21 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    private lazy var feedViewController: FeedViewController =   {
+        let viewController = FeedViewController()
+        viewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.bullet"), tag: 0)
+        return viewController
+    }()
+    
+    private lazy var profileViewController: ProfileViewController = {
+        let viewController = ProfileViewController()
+        viewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 0)
+        return viewController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewControllers = [FeedViewController(), ProfileViewController()]
+        viewControllers = [UINavigationController(rootViewController: feedViewController), profileViewController]
     }
 
 }

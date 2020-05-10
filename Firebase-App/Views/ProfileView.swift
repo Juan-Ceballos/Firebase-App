@@ -17,7 +17,7 @@ class ProfileView: UIView {
     
     public lazy var profilePhotoImageView: UIImageView =    {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "photo.fill")
+        //imageView.image = UIImage(systemName: "photo.fill")
         return imageView
     }()
     
@@ -30,7 +30,9 @@ class ProfileView: UIView {
     
     public lazy var displayNameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "displayName"
+        textField.placeholder = "display name"
+        textField.borderStyle = .roundedRect
+        textField.isUserInteractionEnabled = false
         return textField
     }()
     
