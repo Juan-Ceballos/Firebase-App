@@ -74,26 +74,12 @@ class LoginViewController: UIViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let authDataResult):
-                self?.createDatabaseUser(authDataResult: authDataResult)
                 self?.navigateToMainView()
             }
         }
     }
     
-    private func createDatabaseUser(authDataResult: AuthDataResult)   {
-        databaseService.createDatabaseUser(authDataResult: authDataResult) { [weak self] (result) in
-          switch result {
-          case .failure(let error):
-            DispatchQueue.main.async {
-              self?.showAlert(title: "Account error", message: error.localizedDescription)
-            }
-          case .success:
-            print("new user added to database")
-            
-            // any extra b4 signing in or creating before adding to database and going to tab bar
-          }
-        }
-    }
+    
     
     private func navigateToMainView()   {
         // create instance tabBarVC?

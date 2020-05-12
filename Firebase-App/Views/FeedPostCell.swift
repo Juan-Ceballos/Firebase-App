@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Kingfisher
+import FirebaseAuth
+import NetworkHelper
+import DataPersistence
 
 class FeedPostCell: UICollectionViewCell  {
-    private lazy var photoImageView: UIImageView = {
+    
+    private let databaseService = DatabaseService()
+    
+    public lazy var photoImageView: UIImageView = {
             let imageView = UIImageView()
             imageView.image = UIImage(systemName: "photo")
             imageView.backgroundColor = .cyan
@@ -23,11 +30,6 @@ class FeedPostCell: UICollectionViewCell  {
             return label
         }()
         
-//        @objc public func editPressed(_ sender: UIButton!)  {
-//            print("edit button pressed")
-//            self.delegate?.buttonPressed(tag: sender.tag, currentCell: self)
-//        }
-        
         override init(frame: CGRect) {
             super.init(frame: UIScreen.main.bounds)
             commnonInit()
@@ -37,12 +39,17 @@ class FeedPostCell: UICollectionViewCell  {
             super.init(coder: coder)
             commnonInit()
         }
+    
+    public func configureCell(post: Post) {
+        guard let user = Auth.auth().currentUser else   {return}
+        guard let postPhotoURL = URL(string: post.photoURL)
+            else    {
+                return
+        }
+        photoImageView.kf.setImage(with: postPhotoURL)
+        photoCommentLabel.text = user.displayName
         
-//        public func configureCell(photoObject: PhotoObject)    {
-//            photoImageView.image = UIImage(data: photoObject.imageData)
-//            photoCommentLabel.text = photoObject.photoComment
-//            postDateLabel.text = photoObject.convertedDate
-//        }
+    }
         
         private func commnonInit()  {
             setupPhotoImageViewConstraints()

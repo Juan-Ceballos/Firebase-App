@@ -12,9 +12,6 @@ import Kingfisher
 
 class ProfileViewController: UIViewController {
     
-    // constraint textfield
-    // disable edit on selecting textfield only through edit button
-    
     let profileView = ProfileView()
     
     override func loadView() {
@@ -25,6 +22,11 @@ class ProfileViewController: UIViewController {
     let storageService = StorageService()
     private let imagePickerController = UIImagePickerController()
     
+    var postCount: Int? {
+        didSet  {
+            profileView.submittedPostCountLabel.text = "You have submitted \(postCount ?? 0) images"
+        }
+    }
     
     var displayName: String? {
         didSet  {
@@ -48,36 +50,47 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         imagePickerController.delegate = self
+        profileView.displayNameTextField.delegate = self
         getProfileInfo()
         setupUI()
         profileView.editProfilPhotoButton.addTarget(self, action: #selector(editProfilePhotoButtonPressed), for: .touchUpInside)
         uploadProfilePhoto()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getProfileInfo()
+        setupUI()
+    }
+    
     public func setupUI()  {
         profileView.displayNameTextField.text = displayName
         profileView.userEmailLabel.text = userEmail
         
-    }
-    
-    public func getProfileInfo()    {
-        databaseService.getProfileInfoForUser { (result) in
+        databaseService.getPostCountForCurrentUser { (result) in
             switch result   {
-            case.failure(let error):
+            case .failure(let error):
                 print(error)
-            case .success(let profileDataBaseInfo):
-                self.displayName = profileDataBaseInfo["displayName"] as? String
-                self.userEmail = profileDataBaseInfo["email"] as? String
+            case .success(let postCount):
+                self.profileView.submittedPostCountLabel.text = "\(postCount)"
             }
         }
     }
     
-    // sets image view with photo in firebase
+    public func getProfileInfo()    {
+        guard let user = Auth.auth().currentUser else { return }
+        if user.displayName == nil   {
+            displayName = user.email
+        }
+        else {displayName = user.displayName}
+        userEmail = user.email
+    }
+    
     public func uploadProfilePhoto()    {
         guard let user = Auth.auth().currentUser else {
             return
         }
-        print(user.photoURL?.absoluteString)
+        print(user.photoURL?.absoluteString ?? "")
         if user.photoURL?.description == nil    {
             profileView.profilePhotoImageView.image = UIImage(systemName: "photo")
         }
@@ -86,17 +99,6 @@ class ProfileViewController: UIViewController {
     
     @objc public func editProfilePhotoButtonPressed(_ sender: UIButton) {
         handleImageEdit()
-    }
-    
-    private func updateDatabaseProfilePhoto(photoURL: String) {
-        databaseService.updateDatabaseProfilePhoto(photoURL: photoURL) { (result) in
-            switch result {
-            case .failure(let error):
-                print("failed to update db user: \(error.localizedDescription)")
-            case .success:
-                print("successfully updated db user")
-            }
-        }
     }
     
     private func handleImageEdit()  {
@@ -113,8 +115,6 @@ class ProfileViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
     }
-    
-    
     
     private func showImageController(isCameraSelected: Bool)  {
         imagePickerController.sourceType = .photoLibrary
@@ -143,9 +143,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                     self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
                 }
             case .success(let url):
-                
-                self?.updateDatabaseProfilePhoto(photoURL: url.absoluteString)
-                
+                                
                 let request = Auth.auth().currentUser?.createProfileChangeRequest()
                 request?.photoURL = url
                 request?.commitChanges(completion: { [unowned self] (error) in
@@ -164,6 +162,42 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         dismiss(animated: true)
+    }
+    
+}
+
+extension ProfileViewController: UITextFieldDelegate    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        displayName = textField.text
+        
+        let request = Auth.auth().currentUser?.createProfileChangeRequest()
+        request?.displayName = displayName
+        request?.commitChanges(completion: { (error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("Display Name Changed")
+                self.databaseService.updateDatabaseDisplayName(displayName: self.displayName ?? self.userEmail ?? "") { (result) in
+                    switch result   {
+                    case .failure(let error):
+                        print(error)
+                    case .success:
+                        print()
+                    }
+                }
+            }
+        })
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
+
+extension ProfileViewController: PostObjectDelegate {
+    func photoAdded(_ postObject: Post, numberOfPost: Int) {
+        postCount = numberOfPost
     }
     
 }

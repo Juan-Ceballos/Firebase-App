@@ -11,13 +11,10 @@ import SnapKit
 
 import UIKit
 
-// privatize
-
 class ProfileView: UIView {
     
     public lazy var profilePhotoImageView: UIImageView =    {
         let imageView = UIImageView()
-        //imageView.image = UIImage(systemName: "photo.fill")
         return imageView
     }()
     
@@ -32,15 +29,13 @@ class ProfileView: UIView {
         let textField = UITextField()
         textField.placeholder = "display name"
         textField.borderStyle = .roundedRect
-        textField.isUserInteractionEnabled = false
         return textField
     }()
     
-    public lazy var editDisplayNameButton: UIButton =   {
-        let button = UIButton(type: .system)
-        button.setTitle("Edit", for: .normal)
-        button.setTitleColor(.red, for: .normal)
-        return button
+    public lazy var editDisplayNameButton: UILabel =   {
+        let label = UILabel()
+        label.text = "Display Name:"
+        return label
     }()
     
     public lazy var userEmailLabel: UILabel =   {
@@ -68,8 +63,8 @@ class ProfileView: UIView {
     private func commonInit()   {
         setupProfilePhotoImageViewConstraints()
         setupEditProfilePhotoButtonConstraints()
-        setupDisplayNameTextFieldConstraints()
         setupEditDisplayNameButtonConstraints()
+        setupDisplayNameTextFieldConstraints()
         setupUserEmailLabelConstraints()
         setupSubmittedPostCountLabelConstraints()
     }
@@ -90,6 +85,15 @@ class ProfileView: UIView {
         
         editProfilPhotoButton.snp.makeConstraints { (make) in
             make.top.equalTo(profilePhotoImageView.snp.bottom).offset(8)
+            make.left.equalToSuperview().offset(8)
+        }
+    }
+    
+    private func setupEditDisplayNameButtonConstraints()    {
+        addSubview(editDisplayNameButton)
+        
+        editDisplayNameButton.snp.makeConstraints { (make) in
+            make.top.equalTo(editProfilPhotoButton.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
         }
     }
@@ -98,16 +102,7 @@ class ProfileView: UIView {
         addSubview(displayNameTextField)
         
         displayNameTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(editProfilPhotoButton.snp.bottom).offset(8)
-            make.centerX.equalToSuperview()
-        }
-    }
-    
-    private func setupEditDisplayNameButtonConstraints()    {
-        addSubview(editDisplayNameButton)
-        
-        editDisplayNameButton.snp.makeConstraints { (make) in
-            make.top.equalTo(displayNameTextField.snp.bottom).offset(8)
+            make.top.equalTo(editDisplayNameButton.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
         }
     }
@@ -116,7 +111,7 @@ class ProfileView: UIView {
         addSubview(userEmailLabel)
         
         userEmailLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(editDisplayNameButton.snp.bottom).offset(8)
+            make.top.equalTo(displayNameTextField.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
         }
     }
