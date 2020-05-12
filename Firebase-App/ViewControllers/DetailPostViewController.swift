@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 
 class DetailPostViewController: UIViewController {
 
@@ -26,7 +27,8 @@ class DetailPostViewController: UIViewController {
     }
     
     private func setupUI()  {
-        guard let currentPost = post  else  {
+        guard let currentPost = post,
+            let user = Auth.auth().currentUser else  {
             fatalError()
         }
         
@@ -35,7 +37,7 @@ class DetailPostViewController: UIViewController {
                 return
         }
         detailView.photoImageView.kf.setImage(with: postPhotoURL)
-        detailView.displayNameLabel.text = post?.postedBy
+        detailView.displayNameLabel.text = user.displayName
         detailView.createdAtLabel.text = post?.postDate.dateValue().dateString()
     }
 
