@@ -33,9 +33,7 @@ class FeedView: UIView {
     
     private func setupCollectionViewConstraints()   {
         addSubview(collectionView)
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),

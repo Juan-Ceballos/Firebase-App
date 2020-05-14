@@ -105,7 +105,7 @@ class PostViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default)  {
-            [weak self] alertAction in
+             alertAction in
         }
         
         alertController.addAction(photoLibraryAction)

@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
             switch result   {
             case .failure(let error):
                 print(error.localizedDescription)
-            case .success(let authDataResult):
+            case .success:
                 self?.navigateToMainView()
             }
         }
